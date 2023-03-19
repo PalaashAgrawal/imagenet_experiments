@@ -67,9 +67,13 @@ val_dl = DataLoader(val_ds, bs = bs*2, shuffle = False, drop_last = True,
 dls = DataLoaders(train_dl, val_dl).cuda()
 dls.vocab = imagenet_ds.label_names
     
-learn = vision_learner(dls, xse_resnext50_deeper, 
+
+top_5_accuracy = partial(top_k_accuracy, k=5)
+top_10_accuracy = partial(top_k_accuracy, k=10)
+
+learn = vision_learner(dls, xresnet50, 
                         loss_func = CrossEntropyLossFlat(), 
-                        metrics=[accuracy, partial(top_k_accuracy, k=5), partial(top_k_accuracy,k=10)], 
+                        metrics=[accuracy,top_5_accuracy, top_10_accuracy], 
                         pretrained=False, 
                         normalize = False,cbs=WandbCallback()
                         ).to_fp16()
@@ -81,7 +85,7 @@ wandb.init(
     # track hyperparameters and run metadata
     config={
     "learning_rate": 1e-3,
-    "architecture": "xse_resnext50_deeper",
+    "architecture": "xresnet50",
     "dataset": "imagenet-1k",
     "epochs": 20,
     }
