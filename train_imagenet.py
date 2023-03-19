@@ -9,7 +9,9 @@ import wandb
 
 import warnings
 warnings.filterwarnings("ignore")
-#run by typing: accelerate launch train_imagenet.py
+#run by typing (on main node): accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py 
+#and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
+
 
 import torchvision.transforms as transforms
 path = Path('/home/kumarmg/dl_experiments/training imagenet from scratch')
