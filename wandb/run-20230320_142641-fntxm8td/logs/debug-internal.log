@@ -1,0 +1,169 @@
+2023-03-20 14:26:41,985 INFO    StreamThr :1132041 [internal.py:wandb_internal():90] W&B internal server running at pid: 1132041, started at: 2023-03-20 14:26:41.984860
+2023-03-20 14:26:41,989 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status
+2023-03-20 14:26:41,992 INFO    WriterThread:1132041 [datastore.py:open_for_write():85] open: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/run-fntxm8td.wandb
+2023-03-20 14:26:41,993 DEBUG   SenderThread:1132041 [sender.py:send():336] send: header
+2023-03-20 14:26:42,100 DEBUG   SenderThread:1132041 [sender.py:send():336] send: run
+2023-03-20 14:26:42,679 INFO    SenderThread:1132041 [dir_watcher.py:__init__():219] watching files in: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files
+2023-03-20 14:26:42,679 INFO    SenderThread:1132041 [sender.py:_start_run_threads():1081] run started: fntxm8td with start time 1679293601.982239
+2023-03-20 14:26:42,679 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:42,680 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:42,687 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: check_version
+2023-03-20 14:26:42,688 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: check_version
+2023-03-20 14:26:42,750 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: run_start
+2023-03-20 14:26:42,763 DEBUG   HandlerThread:1132041 [system_info.py:__init__():31] System info init
+2023-03-20 14:26:42,763 DEBUG   HandlerThread:1132041 [system_info.py:__init__():46] System info init done
+2023-03-20 14:26:42,763 INFO    HandlerThread:1132041 [system_monitor.py:start():183] Starting system monitor
+2023-03-20 14:26:42,764 INFO    SystemMonitor:1132041 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-03-20 14:26:42,764 INFO    HandlerThread:1132041 [system_monitor.py:probe():204] Collecting system info
+2023-03-20 14:26:42,764 INFO    SystemMonitor:1132041 [interfaces.py:start():187] Started cpu monitoring
+2023-03-20 14:26:42,765 INFO    SystemMonitor:1132041 [interfaces.py:start():187] Started disk monitoring
+2023-03-20 14:26:42,766 INFO    SystemMonitor:1132041 [interfaces.py:start():187] Started gpu monitoring
+2023-03-20 14:26:42,766 INFO    SystemMonitor:1132041 [interfaces.py:start():187] Started memory monitoring
+2023-03-20 14:26:42,768 INFO    SystemMonitor:1132041 [interfaces.py:start():187] Started network monitoring
+2023-03-20 14:26:42,834 DEBUG   HandlerThread:1132041 [system_info.py:probe():195] Probing system
+2023-03-20 14:26:42,845 DEBUG   HandlerThread:1132041 [system_info.py:_probe_git():180] Probing git
+2023-03-20 14:26:42,868 DEBUG   HandlerThread:1132041 [system_info.py:_probe_git():188] Probing git done
+2023-03-20 14:26:42,869 DEBUG   HandlerThread:1132041 [system_info.py:probe():240] Probing system done
+2023-03-20 14:26:42,869 DEBUG   HandlerThread:1132041 [system_monitor.py:probe():213] {'os': 'Linux-5.15.0-56-generic-x86_64-with-debian-bullseye-sid', 'python': '3.7.16', 'heartbeatAt': '2023-03-20T06:26:42.834548', 'startedAt': '2023-03-20T06:26:41.971156', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'train_imagenet.py', 'codePath': 'train_imagenet.py', 'git': {'remote': 'https://github.com/PalaashAgrawal/imagenet_experiments.git', 'commit': 'ed9b5585732396e5f826c4d2499e6491ed5b4391'}, 'email': 'palaashagrawal29@gmail.com', 'root': '/home/kumarmg/dl_experiments/imagenet_experiments', 'host': 'IHP-SPD-E1M163', 'username': 'kumarmg', 'executable': '/home/kumarmg/anaconda3/envs/fastai/bin/python', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 3607.3621499999995, 'min': 1200.0, 'max': 4560.0}, 'cpu_freq_per_core': [{'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 4300.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 1200.006, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4600.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 1576.974, 'min': 1200.0, 'max': 4600.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4600.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4600.0}], 'disk': {'total': 1758.8579597473145, 'used': 388.53200912475586}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 125.49161529541016}}
+2023-03-20 14:26:42,869 INFO    HandlerThread:1132041 [system_monitor.py:probe():214] Finished collecting system info
+2023-03-20 14:26:42,869 INFO    HandlerThread:1132041 [system_monitor.py:probe():217] Publishing system info
+2023-03-20 14:26:42,869 DEBUG   HandlerThread:1132041 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-03-20 14:26:42,870 DEBUG   HandlerThread:1132041 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-20 14:26:42,870 DEBUG   HandlerThread:1132041 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-03-20 14:26:43,683 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/requirements.txt
+2023-03-20 14:26:43,684 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:43,684 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/conda-environment.yaml
+2023-03-20 14:26:45,188 DEBUG   HandlerThread:1132041 [system_info.py:_save_conda():86] Saving conda packages done
+2023-03-20 14:26:45,189 INFO    HandlerThread:1132041 [system_monitor.py:probe():219] Finished publishing system info
+2023-03-20 14:26:45,193 DEBUG   SenderThread:1132041 [sender.py:send():336] send: files
+2023-03-20 14:26:45,193 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2023-03-20 14:26:45,202 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-20 14:26:45,203 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: stop_status
+2023-03-20 14:26:45,453 DEBUG   SenderThread:1132041 [sender.py:send():336] send: telemetry
+2023-03-20 14:26:45,686 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/conda-environment.yaml
+2023-03-20 14:26:45,686 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-metadata.json
+2023-03-20 14:26:45,952 INFO    wandb-upload_0:1132041 [upload_job.py:push():138] Uploaded file /tmp/tmphgedtrt0wandb/9wwzzk1e-wandb-metadata.json
+2023-03-20 14:26:46,707 DEBUG   SenderThread:1132041 [sender.py:send():336] send: config
+2023-03-20 14:26:47,687 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:47,710 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:49,688 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:50,991 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:50,991 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:51,902 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:51,904 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:51,904 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:51,905 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:51,909 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:52,689 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:52,910 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:52,927 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:52,929 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:52,929 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:52,930 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:52,931 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:53,690 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:53,690 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:53,909 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:53,910 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:53,911 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:53,912 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:53,916 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:54,690 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:54,819 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:54,820 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:54,821 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:54,822 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:54,823 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:55,691 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:55,691 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:55,897 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:55,899 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:55,900 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:55,900 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:55,901 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:56,691 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:56,887 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:56,888 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:56,888 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:56,889 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:56,889 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:57,692 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:57,692 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:57,932 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:57,933 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:57,934 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:57,934 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:57,935 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:57,935 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:58,692 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:26:59,039 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:59,041 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:26:59,042 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:26:59,042 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:59,043 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:59,693 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:26:59,693 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:00,026 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:00,028 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:00,028 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:00,029 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:00,030 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:00,203 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-20 14:27:00,204 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: stop_status
+2023-03-20 14:27:00,693 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:01,068 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:01,070 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:01,070 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:01,071 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:01,072 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:01,694 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:27:01,694 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:02,074 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:02,075 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:02,076 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:02,076 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:02,077 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:02,694 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:03,078 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:27:03,125 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:03,127 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:03,127 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:03,128 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:03,129 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:03,695 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:27:03,695 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:04,112 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:04,113 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:04,114 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:04,114 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:04,115 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:04,695 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:05,088 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:05,089 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:05,090 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:05,091 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:05,091 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:05,696 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:27:05,696 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:06,040 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:06,041 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:06,042 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:06,042 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:06,043 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:06,697 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:07,049 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:07,050 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:07,051 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:07,052 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:07,052 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:07,697 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:27:07,697 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:08,103 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:08,104 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-20 14:27:08,105 DEBUG   SenderThread:1132041 [sender.py:send():336] send: history
+2023-03-20 14:27:08,106 DEBUG   SenderThread:1132041 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:27:08,106 DEBUG   HandlerThread:1132041 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:27:08,107 INFO    SenderThread:1132041 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:27:08,698 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/wandb-summary.json
+2023-03-20 14:27:09,698 INFO    Thread-13 :1132041 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-fntxm8td/files/output.log
+2023-03-20 14:27:10,759 INFO    MainThread:1132041 [internal.py:handle_exit():77] Internal process exited

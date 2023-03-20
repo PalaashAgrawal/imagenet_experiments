@@ -1,0 +1,137 @@
+wandb_version: 1
+
+CastToTensor:
+  desc: null
+  value: true
+DistributedTrainer:
+  desc: null
+  value:
+    sync_bn: true
+Learner:
+  desc: null
+  value:
+    _name: <fastai.learner.Learner object at 0x7fbadf005d10>
+    arch: fastai.vision.models.xresnet.xresnext50
+    default_cbs: true
+    loss_func:
+      _name: FlattenedLoss of CrossEntropyLoss()
+      axis: -1
+      flatten: true
+      floatify: false
+      is_2d: true
+    lr: 0.001
+    metrics:
+    - fastai.metrics.accuracy
+    - functools.partial(<function top_k_accuracy at 0x7fbae0f2f050>, k=5)
+    - functools.partial(<function top_k_accuracy at 0x7fbae0f2f050>, k=10)
+    model_dir: models
+    moms:
+    - 0.95
+    - 0.85
+    - 0.95
+    n_out: 1000
+    normalize: false
+    opt_func: fastai.optimizer.Adam
+    path: .
+    pretrained: false
+    splitter: fastai.vision.learner.default_split
+    train_bn: true
+    wd: null
+    wd_bn_bias: false
+MixedPrecision:
+  desc: null
+  value: true
+ProgressCallback:
+  desc: null
+  value: true
+Recorder:
+  desc: null
+  value:
+    add_time: true
+    train_metrics: false
+    valid_metrics: true
+TrainEvalCallback:
+  desc: null
+  value: true
+WandbCallback:
+  desc: null
+  value:
+    dataset_name: null
+    log: null
+    log_dataset: false
+    log_model: false
+    log_preds: true
+    log_preds_every_epoch: false
+    model_name: null
+    n_preds: 36
+    reorder: true
+    seed: 12345
+    valid_dl: null
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.14.0
+    framework: fastai
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.16
+    start_time: 1679293679.802275
+    t:
+      1:
+      - 1
+      - 4
+      - 5
+      - 41
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      2:
+      - 1
+      - 4
+      - 5
+      - 41
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.7.16
+      5: 0.14.0
+      8:
+      - 5
+architecture:
+  desc: null
+  value: xresnet50
+batch per epoch:
+  desc: null
+  value: 2002
+batch size:
+  desc: null
+  value: 128
+dataset:
+  desc: null
+  value: imagenet-1k
+device:
+  desc: null
+  value: cuda
+epochs:
+  desc: null
+  value: 20
+frozen:
+  desc: null
+  value: false
+frozen idx:
+  desc: null
+  value: 0
+learning_rate:
+  desc: null
+  value: 0.001
+model parameters:
+  desc: null
+  value: 25617504

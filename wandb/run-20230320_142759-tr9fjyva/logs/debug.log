@@ -1,0 +1,26 @@
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Configure stats pid to 1132719
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Loading settings from /home/kumarmg/.config/wandb/settings
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Loading settings from /home/kumarmg/dl_experiments/imagenet_experiments/wandb/settings
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train_imagenet.py', 'program': 'train_imagenet.py'}
+2023-03-20 14:27:59,794 INFO    MainThread:1132719 [wandb_init.py:_log_setup():506] Logging user logs to /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142759-tr9fjyva/logs/debug.log
+2023-03-20 14:27:59,795 INFO    MainThread:1132719 [wandb_init.py:_log_setup():507] Logging internal logs to /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142759-tr9fjyva/logs/debug-internal.log
+2023-03-20 14:27:59,795 INFO    MainThread:1132719 [wandb_init.py:init():546] calling init triggers
+2023-03-20 14:27:59,795 INFO    MainThread:1132719 [wandb_init.py:init():553] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.001, 'architecture': 'xresnet50', 'dataset': 'imagenet-1k', 'epochs': 20}
+2023-03-20 14:27:59,795 INFO    MainThread:1132719 [wandb_init.py:init():602] starting backend
+2023-03-20 14:27:59,795 INFO    MainThread:1132719 [wandb_init.py:init():606] setting up manager
+2023-03-20 14:27:59,798 INFO    MainThread:1132719 [backend.py:_multiprocessing_setup():108] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-03-20 14:27:59,801 INFO    MainThread:1132719 [wandb_init.py:init():613] backend started and connected
+2023-03-20 14:27:59,807 INFO    MainThread:1132719 [wandb_init.py:init():701] updated telemetry
+2023-03-20 14:27:59,907 INFO    MainThread:1132719 [wandb_init.py:init():741] communicating run to backend with 60.0 second timeout
+2023-03-20 14:28:00,485 INFO    MainThread:1132719 [wandb_run.py:_on_init():2133] communicating current version
+2023-03-20 14:28:00,558 INFO    MainThread:1132719 [wandb_run.py:_on_init():2142] got version response 
+2023-03-20 14:28:00,559 INFO    MainThread:1132719 [wandb_init.py:init():789] starting run threads in backend
+2023-03-20 14:28:02,924 INFO    MainThread:1132719 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-20 14:28:02,924 INFO    MainThread:1132719 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-03-20 14:28:02,924 INFO    MainThread:1132719 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-20 14:28:02,924 INFO    MainThread:1132719 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-20 14:28:02,925 INFO    MainThread:1132719 [wandb_init.py:init():831] run started, returning control to user process
+2023-03-20 14:28:05,645 INFO    MainThread:1132719 [wandb_run.py:_config_callback():1251] config_cb None None {'Learner': {'loss_func': {'axis': -1, 'flatten': True, 'floatify': False, 'is_2d': True, '_name': 'FlattenedLoss of CrossEntropyLoss()'}, 'opt_func': 'fastai.optimizer.Adam', 'lr': 0.001, 'splitter': 'fastai.vision.learner.default_split', 'metrics': ['fastai.metrics.accuracy', 'functools.partial(<function top_k_accuracy at 0x7fbae0f2f050>, k=5)', 'functools.partial(<function top_k_accuracy at 0x7fbae0f2f050>, k=10)'], 'path': '.', 'model_dir': 'models', 'wd': None, 'wd_bn_bias': False, 'train_bn': True, 'moms': [0.95, 0.85, 0.95], 'default_cbs': True, 'arch': 'fastai.vision.models.xresnet.xresnext50', 'normalize': False, 'n_out': 1000, 'pretrained': False, '_name': '<fastai.learner.Learner object at 0x7fbadf005d10>'}, 'TrainEvalCallback': True, 'Recorder': {'add_time': True, 'train_metrics': False, 'valid_metrics': True}, 'CastToTensor': True, 'ProgressCallback': True, 'WandbCallback': {'log': None, 'log_preds': True, 'log_preds_every_epoch': False, 'log_model': False, 'model_name': None, 'log_dataset': False, 'dataset_name': None, 'valid_dl': None, 'n_preds': 36, 'seed': 12345, 'reorder': True}, 'MixedPrecision': True, 'DistributedTrainer': {'sync_bn': True}, 'batch size': 128, 'batch per epoch': 2002, 'model parameters': 25617504, 'device': 'cuda', 'frozen': False, 'frozen idx': 0}

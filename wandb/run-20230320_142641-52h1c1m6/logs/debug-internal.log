@@ -1,0 +1,57 @@
+2023-03-20 14:26:41,559 INFO    StreamThr :1132028 [internal.py:wandb_internal():90] W&B internal server running at pid: 1132028, started at: 2023-03-20 14:26:41.559287
+2023-03-20 14:26:41,562 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status
+2023-03-20 14:26:41,566 INFO    WriterThread:1132028 [datastore.py:open_for_write():85] open: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/run-52h1c1m6.wandb
+2023-03-20 14:26:41,567 DEBUG   SenderThread:1132028 [sender.py:send():336] send: header
+2023-03-20 14:26:41,660 DEBUG   SenderThread:1132028 [sender.py:send():336] send: run
+2023-03-20 14:26:42,257 INFO    SenderThread:1132028 [dir_watcher.py:__init__():219] watching files in: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files
+2023-03-20 14:26:42,257 INFO    SenderThread:1132028 [sender.py:_start_run_threads():1081] run started: 52h1c1m6 with start time 1679293601.556731
+2023-03-20 14:26:42,257 DEBUG   SenderThread:1132028 [sender.py:send_request():363] send_request: summary_record
+2023-03-20 14:26:42,258 INFO    SenderThread:1132028 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-03-20 14:26:42,268 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: check_version
+2023-03-20 14:26:42,268 DEBUG   SenderThread:1132028 [sender.py:send_request():363] send_request: check_version
+2023-03-20 14:26:42,326 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: run_start
+2023-03-20 14:26:42,339 DEBUG   HandlerThread:1132028 [system_info.py:__init__():31] System info init
+2023-03-20 14:26:42,340 DEBUG   HandlerThread:1132028 [system_info.py:__init__():46] System info init done
+2023-03-20 14:26:42,340 INFO    HandlerThread:1132028 [system_monitor.py:start():183] Starting system monitor
+2023-03-20 14:26:42,340 INFO    SystemMonitor:1132028 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-03-20 14:26:42,340 INFO    HandlerThread:1132028 [system_monitor.py:probe():204] Collecting system info
+2023-03-20 14:26:42,341 INFO    SystemMonitor:1132028 [interfaces.py:start():187] Started cpu monitoring
+2023-03-20 14:26:42,342 INFO    SystemMonitor:1132028 [interfaces.py:start():187] Started disk monitoring
+2023-03-20 14:26:42,343 INFO    SystemMonitor:1132028 [interfaces.py:start():187] Started gpu monitoring
+2023-03-20 14:26:42,345 INFO    SystemMonitor:1132028 [interfaces.py:start():187] Started memory monitoring
+2023-03-20 14:26:42,346 INFO    SystemMonitor:1132028 [interfaces.py:start():187] Started network monitoring
+2023-03-20 14:26:42,379 DEBUG   HandlerThread:1132028 [system_info.py:probe():195] Probing system
+2023-03-20 14:26:42,392 DEBUG   HandlerThread:1132028 [system_info.py:_probe_git():180] Probing git
+2023-03-20 14:26:42,417 DEBUG   HandlerThread:1132028 [system_info.py:_probe_git():188] Probing git done
+2023-03-20 14:26:42,417 DEBUG   HandlerThread:1132028 [system_info.py:probe():240] Probing system done
+2023-03-20 14:26:42,417 DEBUG   HandlerThread:1132028 [system_monitor.py:probe():213] {'os': 'Linux-5.15.0-56-generic-x86_64-with-debian-bullseye-sid', 'python': '3.7.16', 'heartbeatAt': '2023-03-20T06:26:42.379923', 'startedAt': '2023-03-20T06:26:41.546971', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'train_imagenet.py', 'codePath': 'train_imagenet.py', 'git': {'remote': 'https://github.com/PalaashAgrawal/imagenet_experiments.git', 'commit': 'ed9b5585732396e5f826c4d2499e6491ed5b4391'}, 'email': 'palaashagrawal29@gmail.com', 'root': '/home/kumarmg/dl_experiments/imagenet_experiments', 'host': 'IHP-SPD-E1M163', 'username': 'kumarmg', 'executable': '/home/kumarmg/anaconda3/envs/fastai/bin/python', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 3611.2771999999995, 'min': 1200.0, 'max': 4560.0}, 'cpu_freq_per_core': [{'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 4025.436, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3948.727, 'min': 1200.0, 'max': 4600.0}, {'current': 1775.447, 'min': 1200.0, 'max': 4500.0}, {'current': 1351.381, 'min': 1200.0, 'max': 4600.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4700.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4600.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4500.0}, {'current': 3700.0, 'min': 1200.0, 'max': 4600.0}], 'disk': {'total': 1758.8579597473145, 'used': 388.53197860717773}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 125.49161529541016}}
+2023-03-20 14:26:42,417 INFO    HandlerThread:1132028 [system_monitor.py:probe():214] Finished collecting system info
+2023-03-20 14:26:42,417 INFO    HandlerThread:1132028 [system_monitor.py:probe():217] Publishing system info
+2023-03-20 14:26:42,418 DEBUG   HandlerThread:1132028 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-03-20 14:26:42,418 DEBUG   HandlerThread:1132028 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-20 14:26:42,418 DEBUG   HandlerThread:1132028 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-03-20 14:26:43,261 INFO    Thread-13 :1132028 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files/conda-environment.yaml
+2023-03-20 14:26:43,262 INFO    Thread-13 :1132028 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files/requirements.txt
+2023-03-20 14:26:43,262 INFO    Thread-13 :1132028 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files/wandb-summary.json
+2023-03-20 14:26:44,669 DEBUG   HandlerThread:1132028 [system_info.py:_save_conda():86] Saving conda packages done
+2023-03-20 14:26:44,670 INFO    HandlerThread:1132028 [system_monitor.py:probe():219] Finished publishing system info
+2023-03-20 14:26:44,675 DEBUG   SenderThread:1132028 [sender.py:send():336] send: files
+2023-03-20 14:26:44,675 INFO    SenderThread:1132028 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2023-03-20 14:26:44,682 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-20 14:26:44,686 DEBUG   SenderThread:1132028 [sender.py:send_request():363] send_request: stop_status
+2023-03-20 14:26:44,943 DEBUG   SenderThread:1132028 [sender.py:send():336] send: telemetry
+2023-03-20 14:26:45,263 INFO    Thread-13 :1132028 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files/conda-environment.yaml
+2023-03-20 14:26:45,264 INFO    Thread-13 :1132028 [dir_watcher.py:_on_file_created():278] file/dir created: /home/kumarmg/dl_experiments/imagenet_experiments/wandb/run-20230320_142641-52h1c1m6/files/wandb-metadata.json
+2023-03-20 14:26:45,447 INFO    wandb-upload_0:1132028 [upload_job.py:push():138] Uploaded file /tmp/tmplhxy10mnwandb/ktpkw89f-wandb-metadata.json
+2023-03-20 14:26:46,944 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:51,945 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:56,946 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:26:59,679 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-20 14:26:59,680 DEBUG   SenderThread:1132028 [sender.py:send_request():363] send_request: stop_status
+2023-03-20 14:27:02,942 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:27:07,943 DEBUG   HandlerThread:1132028 [handler.py:handle_request():144] handle_request: status_report
+2023-03-20 14:27:10,366 ERROR   memory    :1132028 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=1131902)
+2023-03-20 14:27:10,366 ERROR   memory    :1132028 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=1131902)
+2023-03-20 14:27:10,372 ERROR   cpu       :1132028 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=1131902)
+2023-03-20 14:27:10,374 ERROR   cpu       :1132028 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=1131902)
+2023-03-20 14:27:12,335 INFO    MainThread:1132028 [internal.py:handle_exit():77] Internal process exited

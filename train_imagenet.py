@@ -9,7 +9,7 @@ import wandb
 
 import warnings
 warnings.filterwarnings("ignore")
-#run by typing (on main node): accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py 
+#run by typing (on main node): nohup accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py &
 #and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
 
 
@@ -70,8 +70,8 @@ dls = DataLoaders(train_dl, val_dl).cuda()
 dls.vocab = imagenet_ds.label_names
     
 
-top_5_accuracy = partial(top_k_accuracy, k=5)
-top_10_accuracy = partial(top_k_accuracy, k=10)
+def top_5_accuracy(x,y): return  top_k_accuracy(x,y, k=5)
+def top_10_accuracy(x,y): return  top_10_accuracy(x,y, k=5)
 
 learn = vision_learner(dls, xresnext50, 
                         loss_func = CrossEntropyLossFlat(), 
@@ -84,7 +84,7 @@ learn.path = path
 
 wandb.init(
     project="imagenet_training_noblur",
-    name = "xresnext50_20.1e-3"
+    name = "xresnext50_20.1e-3",
     # track hyperparameters and run metadata
     config={
     "learning_rate": 1e-3,
