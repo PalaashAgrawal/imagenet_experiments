@@ -73,7 +73,7 @@ dls.vocab = imagenet_ds.label_names
 top_5_accuracy = partial(top_k_accuracy, k=5)
 top_10_accuracy = partial(top_k_accuracy, k=10)
 
-learn = vision_learner(dls, xresnet50, 
+learn = vision_learner(dls, xresnext50, 
                         loss_func = CrossEntropyLossFlat(), 
                         metrics=[accuracy,top_5_accuracy, top_10_accuracy], 
                         pretrained=False, 
@@ -84,6 +84,7 @@ learn.path = path
 
 wandb.init(
     project="imagenet_training_noblur",
+    name = "xresnext50_20.1e-3"
     # track hyperparameters and run metadata
     config={
     "learning_rate": 1e-3,
@@ -93,6 +94,6 @@ wandb.init(
     }
 )
 
-with learn.distrib_ctx(): learn.fit_one_cycle(20,1e-3)
+with learn.distrib_ctx(): learn.fit(20,1e-3)
 
 learn.save("imagenet_noblur_1.1.0")
