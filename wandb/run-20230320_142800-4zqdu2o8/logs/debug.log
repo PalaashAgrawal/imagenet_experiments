@@ -23,3 +23,4 @@ config: {'learning_rate': 0.001, 'architecture': 'xresnet50', 'dataset': 'imagen
 2023-03-20 14:28:03,087 INFO    MainThread:1132720 [wandb_run.py:_redirect():2034] Wrapping output streams.
 2023-03-20 14:28:03,087 INFO    MainThread:1132720 [wandb_run.py:_redirect():2059] Redirects installed.
 2023-03-20 14:28:03,088 INFO    MainThread:1132720 [wandb_init.py:init():831] run started, returning control to user process
+2023-03-21 03:42:14,896 WARNING MsgRouterThr:1132720 [router.py:message_loop():77] message_loop has been closed
