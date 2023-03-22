@@ -5,16 +5,16 @@ from fastai.vision.all import *
 from fastai.distributed import *
 from fastai.callback.wandb import *
 from PIL import ImageFilter
-
 import wandb
-
 
 import warnings
 warnings.filterwarnings("ignore")
 
-
-
 id = "imagenet_blur"
+model = xresnext50
+lr = 1e-3
+epochs = 25
+
 #run by typing (on main node): nohup accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py &
 #and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
 
@@ -48,14 +48,15 @@ class hf_imagenet_item_tfms:
     def __init__(self, tfms:list = None, blur: bool = False, blur_std = 1.):
         self.blur = blur
         self.blur_std = blur_std
-        if blur: assert self.blur_std is not None 
+        # if blur: assert self.blur_std is not None #redundant since std (in self.apply_blur) defaults to 0 if blur_std is None 
             
         self.tfms = list(tfms or [lambda img: img.convert(mode='RGB'), self.apply_blur, lambda img: img.resize((256, 256)), 
                                   transforms.PILToTensor(), TensorImage])
     
     
     def apply_blur(self,x):
-        radius = torch.normal(mean=Tensor([0]), std=Tensor([self.blur_std or 0]))
+        # radius = torch.normal(mean=Tensor([0]), std=Tensor([self.blur_std or 0]))
+        radius = Tensor(1).uniform_(0,2)
         return x.filter(ImageFilter.GaussianBlur(radius = radius)) if self.blur else x
     
     def __call__(self, x):
@@ -85,9 +86,9 @@ dls.vocab = imagenet_ds.label_names
     
 
 def top_5_accuracy(x,y): return  top_k_accuracy(x,y, k=5)
-def top_10_accuracy(x,y): return  top_k_accuracy(x,y, k=5)
+def top_10_accuracy(x,y): return  top_k_accuracy(x,y, k=10)
 
-learn = vision_learner(dls, xresnext50, 
+learn = vision_learner(dls, model, 
                         loss_func = CrossEntropyLossFlat(), 
                         metrics=[accuracy,top_5_accuracy, top_10_accuracy], 
                         pretrained=False, 
@@ -95,17 +96,15 @@ learn = vision_learner(dls, xresnext50,
                         ).to_fp16()
 
 learn.path = path
-lr = 1e-3
-epochs = 25
 
 
 wandb.init(
     project="imagenet_training_noblur",
-    name = f"{id}_{learn.model.__name__}_{epochs}_{lr}",
+    name = f"{id}_{model.__name__}_{epochs}_{lr}",
     # track hyperparameters and run metadata
     config={
     "learning_rate": lr,
-    "architecture": learn.model.__name__,
+    "architecture": model.__name__,
     "dataset": "imagenet-1k",
     "epochs": epochs,
     }
@@ -113,4 +112,4 @@ wandb.init(
 
 with learn.distrib_ctx(): learn.fit(epochs,lr)
 
-learn.save(f"{id}_{learn.model.__name__}_{epochs}_{lr}")
+learn.save(f"{id}_{model.__name__}_{epochs}_{lr}")
