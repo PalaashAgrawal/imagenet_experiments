@@ -4,6 +4,7 @@ from fastai.data.all import *
 from fastai.vision.all import *
 from fastai.distributed import *
 from fastai.callback.wandb import *
+import os
 
 import wandb
 
@@ -13,10 +14,16 @@ warnings.filterwarnings("ignore")
 #and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
 
 
-import torchvision.transforms as transforms
-path = Path('/home/kumarmg/dl_experiments/training imagenet from scratch')
-
+id = "imagenet_noblur"
+model = xresnext50
+lr = 1e-3
+epochs = 25
 bs = 128
+
+import torchvision.transforms as transforms
+path = Path(os.getcwd())
+
+
 
 class imagenet_dataset():
     def __init__(self, hf_identifier = "imagenet-1k", use_auth_token = True):
@@ -84,16 +91,16 @@ learn.path = path
 
 wandb.init(
     project="imagenet_training_noblur",
-    name = "xresnext50_20.1e-3",
+    name = f"{id}_{model.__name__}_{epochs}_{lr}",
     # track hyperparameters and run metadata
     config={
-    "learning_rate": 1e-3,
-    "architecture": "xresnet50",
+    "learning_rate": lr,
+    "architecture": model.__name__,
     "dataset": "imagenet-1k",
-    "epochs": 20,
+    "epochs": epochs,
     }
 )
 
-with learn.distrib_ctx(): learn.fit(20,1e-3)
+with learn.distrib_ctx(): learn.fit(epochs,lr)
 
-learn.save("imagenet_noblur_1.1.0")
+learn.save(f"{id}_{model.__name__}_{epochs}_{lr}")

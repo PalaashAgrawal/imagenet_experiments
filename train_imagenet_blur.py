@@ -14,13 +14,13 @@ id = "imagenet_blur"
 model = xresnext50
 lr = 1e-3
 epochs = 25
+bs = 128
 
 #run by typing (on main node): nohup accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py &
 #and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
 
 import torchvision.transforms as transforms
-path = Path('/home/kumarmg/dl_experiments/training imagenet from scratch')
-bs = 128
+path = Path(os.getcwd())
 
 class imagenet_dataset():
     def __init__(self, hf_identifier = "imagenet-1k", use_auth_token = True):
