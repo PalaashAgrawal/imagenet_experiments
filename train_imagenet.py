@@ -13,7 +13,6 @@ warnings.filterwarnings("ignore")
 #run by typing (on main node): nohup accelerate launch --config_file multinode_trainin_config/accelerate_config_host.yaml train_imagenet.py &
 #and for client server: multinode_trainin_config/accelerate_config_client0.yaml 
 
-
 id = "imagenet_noblur"
 model = xresnext50
 lr = 1e-3
@@ -22,7 +21,6 @@ bs = 128
 
 import torchvision.transforms as transforms
 path = Path(os.getcwd())
-
 
 
 class imagenet_dataset():
@@ -43,27 +41,63 @@ random_split_pct = 0.8
 train_ds_len = int(random_split_pct*len(imagenet_ds))
 train_ds, val_ds = torch.utils.data.random_split(imagenet_ds, [train_ds_len, len(imagenet_ds)-train_ds_len])
 
+# class hf_imagenet_item_tfms: 
+#     '''hugginface datasets version of imagenet-1k gives PIL.JpegImagePlugin.JpegImageFile files. 
+#     Also some of the images are B&W (1 channel instead of 3 channel)
+#     Transforms to convert this dataset to usable tensors
+#     '''
+#     def __init__(self, tfms:list = None):
+#         self.tfms = list(tfms or [lambda img: img.convert(mode='RGB'),lambda img: img.resize((256, 256)), transforms.PILToTensor(), TensorImage])
+    
+#     def __call__(self, x):
+#         "note that after_item takes output of create_item, which returns a tuple of x,y. So we need to return it as is."
+#         img, label = x
+#         ret = transforms.Compose(self.tfms)(img)
+#         return ret,label
+
+# class hf_imagenet_batch_tfms:
+#     def __init__(self, tfms:list = None):
+#         self.tfms = list(tfms or [IntToFloatTensor(), Normalize.from_stats(*imagenet_stats), *aug_transforms()])
+    
+#     def __call__(self, x): 
+#         "after_batch however, unlike after_item, takes on x as input"
+#         return transforms.Compose(self.tfms)(x)
+
 class hf_imagenet_item_tfms: 
     '''hugginface datasets version of imagenet-1k gives PIL.JpegImagePlugin.JpegImageFile files. 
     Also some of the images are B&W (1 channel instead of 3 channel)
     Transforms to convert this dataset to usable tensors
     '''
     def __init__(self, tfms:list = None):
-        self.tfms = list(tfms or [lambda img: img.convert(mode='RGB'),lambda img: img.resize((256, 256)), transforms.PILToTensor(), TensorImage])
+        self.tfms = list(tfms or [lambda img: img.convert(mode='RGB'), lambda img: img.resize((256, 256)), 
+                                  transforms.PILToTensor(), TensorImage])
     
     def __call__(self, x):
         "note that after_item takes output of create_item, which returns a tuple of x,y. So we need to return it as is."
         img, label = x
         ret = transforms.Compose(self.tfms)(img)
         return ret,label
+    
+    
 
 class hf_imagenet_batch_tfms:
-    def __init__(self, tfms:list = None):
-        self.tfms = list(tfms or [IntToFloatTensor(), Normalize.from_stats(*imagenet_stats), *aug_transforms()])
+    def __init__(self, tfms:list = None, blur = False):
+        self.blur = blur
+        
+        self.tfms = list(tfms or [IntToFloatTensor(),  self.apply_blur,  Normalize.from_stats(*imagenet_stats), *aug_transforms()])
     
-    def __call__(self, x): 
-        "after_batch however, unlike after_item, takes on x as input"
-        return transforms.Compose(self.tfms)(x)
+    def apply_blur(self,x):
+        f = transforms.GaussianBlur(51)
+        return f(x) if self.blur else x
+
+                 
+    def __call__(self, x):
+        "note that after_item takes output of create_item, which returns a tuple of x,y. So we need to return it as is."
+        img, label = x
+        ret = transforms.Compose(self.tfms)(img)
+        return ret,label
+    
+    
 
 train_dl = DataLoader(train_ds, bs = bs, shuffle = True, drop_last = True, 
                           after_item =  hf_imagenet_item_tfms(),
@@ -102,5 +136,4 @@ wandb.init(
 )
 
 with learn.distrib_ctx(): learn.fit(epochs,lr)
-
 learn.save(f"{id}_{model.__name__}_{epochs}_{lr}")
