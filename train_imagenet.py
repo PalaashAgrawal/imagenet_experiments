@@ -78,7 +78,7 @@ dls.vocab = imagenet_ds.label_names
     
 
 def top_5_accuracy(x,y): return  top_k_accuracy(x,y, k=5)
-def top_10_accuracy(x,y): return  top_10_accuracy(x,y, k=5)
+def top_10_accuracy(x,y): return  top_k_accuracy(x,y, k=10)
 
 learn = vision_learner(dls, xresnext50, 
                         loss_func = CrossEntropyLossFlat(), 
