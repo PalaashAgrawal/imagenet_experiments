@@ -1,0 +1,1 @@
+all model .pth files are stored in WS3 under dl_experiments/imagenet_training_local. Store all model .pth files from other workstations here through rsync. 
