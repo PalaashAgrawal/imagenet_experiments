@@ -84,7 +84,12 @@ class hf_imagenet_batch_tfms:
     def __init__(self, tfms:list = None, blur = False):
         self.blur = blur
         
-        self.tfms = list(tfms or [IntToFloatTensor(),  self.apply_blur,  Normalize.from_stats(*imagenet_stats), *aug_transforms()])
+        self.tfms = list(tfms or [IntToFloatTensor(),  
+                                  self.apply_blur,
+                                  *aug_transforms(),
+                                  Normalize.from_stats(*imagenet_stats), 
+                                  
+                                 ])
     
     def apply_blur(self,x):
         f = transforms.GaussianBlur(51)
